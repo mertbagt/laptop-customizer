@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import slugify from 'slugify';
 
 import FeatureItem from '../FeatureItem/FeatureItem';
+import FeatureName from '../FeatureName/FeatureName';
 import './MainForm.css';
 
 class MainForm extends Component {
@@ -27,12 +28,11 @@ class MainForm extends Component {
       });
   
       return (
-        <fieldset className="feature" key={featureHash}>
-          <legend className="feature__name">
-            <h3>{feature}</h3>
-          </legend>
-          {options}
-        </fieldset>
+        <FeatureName 
+          feature={feature}
+          featureHash={featureHash}
+          options={options}
+        />
       );
     });
 
