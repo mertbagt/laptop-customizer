@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainForm from './MainForm/MainForm';
 import MainSummary from './MainSummary/MainSummary';
+import FEATURES from './FEATURES';
 import './App.css';
 
 // This object will allow us to
@@ -9,6 +10,8 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD'
 });
+
+const store = FEATURES
 
 class App extends Component {
   state = {
@@ -49,7 +52,7 @@ class App extends Component {
         <main>
           <MainForm 
             selected={this.state.selected}
-            currentFeatures={this.props.features}
+            currentFeatures={store}
             currencyFormat={USCurrencyFormat}
             onUpdate={this.updateFeature}
           />
